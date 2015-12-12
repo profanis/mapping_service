@@ -18,7 +18,8 @@
         let defaultParserOptions = {
             skip_empty_lines: true,
             trim: true,
-            delimiter: ';'
+            delimiter: ';',
+            columns: true
         };
         _.merge(defaultParserOptions, parserOptions);
 
