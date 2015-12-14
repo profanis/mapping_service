@@ -13,7 +13,7 @@
          */
         self.getBy = (neededColumn, filterColumn) => {
 
-            return _.result(_.findWhere(csvData, filterColumn), neededColumn);
+            return _.isEmpty(neededColumn) ? _.findWhere(csvData, filterColumn) : _.result(_.findWhere(csvData, filterColumn), neededColumn);
         };
 
         return self;

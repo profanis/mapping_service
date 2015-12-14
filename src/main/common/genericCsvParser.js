@@ -5,6 +5,7 @@
     var fs = require('fs');
     var _ = require('lodash');
 
+    
     var genericCsvParser = function(fileName, parserOptions, cb) {
 
         if (arguments.length == 2) {
