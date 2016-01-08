@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    var parse = require('csv-parse');
-    var fs = require('fs');
-    var _ = require('lodash');
+    const parse = require('csv-parse');
+    const fs = require('fs');
+    const _ = require('lodash');
 
-    
+    //TODO use promises in order to handle the errors that occur in a callback function
     var genericCsvParser = function(fileName, parserOptions, cb) {
 
         if (arguments.length == 2) {
@@ -24,13 +24,18 @@
         };
         _.merge(defaultParserOptions, parserOptions);
 
-        parse(fileData, defaultParserOptions, (parseError, parsedData) => {
-            if (parseError) throw parseError;
+
+        var parseCallback = (parseError, parsedData) => {
+            if (parseError) {
+                throw parseError;
+            }
 
             if (_.isFunction(cb)) {
                 cb(parsedData);
             }
-        });
+        }
+
+        parse(fileData, defaultParserOptions, parseCallback);
     }
 
     module.exports = genericCsvParser;

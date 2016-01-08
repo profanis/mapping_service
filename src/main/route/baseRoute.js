@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    var CsvQueryService = require('../service/csvQueryService.js');
-    var genericCsvParser = require('../../main/common/genericCsvParser.js');
-    var _ = require('lodash');
+    const CsvQueryService = require('../service/csvQueryService.js');
+    const genericCsvParser = require('../../main/common/genericCsvParser.js');
+    const _ = require('lodash');
 
     /**
      * sets the BaseRoute functionality

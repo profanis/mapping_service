@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    var assert = require("assert");
-    var genericCsvParser = require('../../main/common/genericCsvParser.js');
-    var CsvQueryService = require('../../main/service/csvQueryService.js');
-    var _ = require("lodash");
+    const assert = require('chai').assert;
+    const genericCsvParser = require('../../main/common/genericCsvParser.js');
+    const CsvQueryService = require('../../main/service/csvQueryService.js');
+    const _ = require("lodash");
 
     describe("Csv Mapper", () => {
 
